@@ -47,8 +47,16 @@ h1 {
 }
 
 .food-preview {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   padding: 10vh 10vw;
   text-align: center;
+  background: #eef0f1;
 }
+
+.food-carousel {
+  width: 100%;
+  max-width: 800px;
+  display: inline-block;;
+}
+

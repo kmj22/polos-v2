@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {SlickCarouselModule} from "ngx-slick-carousel";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

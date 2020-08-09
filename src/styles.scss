@@ -1,0 +1,13 @@
+@import "~normalize.css";
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  overflow: auto;
+}
+
+body {
+  overflow-x: hidden;
+}

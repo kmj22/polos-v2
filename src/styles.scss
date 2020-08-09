@@ -5,9 +5,8 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
-  overflow: auto;
 }
 
-body {
+html, body {
   overflow-x: hidden;
 }

@@ -1,0 +1,54 @@
+.banner {
+  background-image: url('https://images.squarespace-cdn.com/content/v1/573266db20c647896b5aaa45/1462925897569-X90E4W3TKHB1PLFZMI4O/ke17ZwdGBToddI8pDm48kPmLlvCIXgndBxNq9fzeZb1Zw-zPPgdn4jUwVcJE1ZvWRBizNpWTGFgrpiRV_00eX3VwxMIOEK7mu3DMnwqv-Nsp2ryTI0HqTOaaUohrI8PIJHwQ_mvadvvhLgfYN7DtPDwNniYJh6KkixVZqmTTrGQKMshLAGzx4R3EDFOm1kBS/Filet+Mignon+Bordelaise.jpg');
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+
+  .banner-content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    //background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+    background-image: linear-gradient(to bottom right,#002f4b, #1a191f);
+    opacity: .8;
+  }
+
+  h1, h3 {
+    color: white;
+  }
+}
+
+h1 {
+  font-size: 64px;
+}
+
+.logo {
+  height: 200px;
+}
+
+.btn {
+  border: 2px solid black;
+  outline: 0;
+  background: white;
+  padding: 1em;
+}
+
+.section {
+  min-height: 100vh;
+  width: 100vw;
+  padding: 10vh 10vw;
+  text-align: center;
+}

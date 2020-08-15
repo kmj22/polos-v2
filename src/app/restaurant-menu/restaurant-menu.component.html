@@ -1,0 +1,17 @@
+<div class="banner">
+  <div class="banner-content">
+    <h1>SERVING AMERICAN PUB STYLE FOOD</h1>
+
+    <button class="btn">CALL NOW</button>
+    <button class="btn">ORDER WITH DOORDASH</button>
+  </div>
+</div>
+
+<div class="section">
+  <div *ngFor="let food of FOOD_MENU.starters">
+    <div>{{food.name}}</div>
+    <div>{{food.desc}}</div>
+    <div>{{food.price | currency:'USD':'symbol':'1.0-2'}}</div>
+  </div>
+
+</div>

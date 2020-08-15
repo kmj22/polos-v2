@@ -25,6 +25,7 @@
     "@angular/router": "~10.0.7",
     "core-js": "^3.6.5",
     "jquery": "^3.5.1",
+    "ng-inline-svg": "^11.0.0",
     "ngx-slick-carousel": "^0.5.1",
     "node": "^14.5.0",
     "normalize.css": "^8.0.1",

@@ -50,5 +50,19 @@ h1 {
   min-height: 100vh;
   width: 100vw;
   padding: 10vh 10vw;
-  text-align: center;
+}
+
+.food-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.food-desc {
+  font-style: italic;
+  color: #a9a9a9;
+}
+
+.food-dot-separator {
+  border-top: 2px dotted red;
+  margin-top: 1em;
 }

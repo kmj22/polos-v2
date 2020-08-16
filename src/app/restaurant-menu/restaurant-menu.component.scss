@@ -66,3 +66,53 @@ h1 {
   border-top: 2px dotted red;
   margin-top: 1em;
 }
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -1em;
+  justify-content: center;
+  padding: 5vh 5vw;
+  //padding: 10vh 10vw;
+
+  & > * {
+    margin-right: 1em;
+    margin-bottom: 1em;
+  }
+}
+
+.menu-label {
+  text-align: center;
+  font-size: 12px;
+  margin-top: .5em;
+}
+
+.menu-option {
+
+  padding: .75em;
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  fill: #a9a9a9;
+  stroke: #a9a9a9 !important;;
+  color: #a9a9a9;
+  background: #eaeaea;
+
+  cursor: pointer;
+
+  &:hover {
+    fill: #eaeaea;
+    stroke: #eaeaea !important;
+    color: #eaeaea;
+    background: #a9a9a9;
+  }
+
+  ::ng-deep svg {
+    display: block;
+    width: 2.5em;
+    height: auto;
+  }
+}

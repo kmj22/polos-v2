@@ -4,5 +4,8 @@ export const FOOD_MENU = {
     {name: 'Wisconsin Beer Battered Cheese Curds', desc: 'Served with Spicy Ketchup & Chipotle Ranch Dressing', price: 8},
     {name: 'Wisconsin Beer Battered Cheese Curds', desc: 'Served with Spicy Ketchup & Chipotle Ranch Dressing', price: 8},
     {name: 'Wisconsin Beer Battered Cheese Curds', desc: 'Served with Spicy Ketchup & Chipotle Ranch Dressing', price: 8},
+  ],
+  shareables: [
+    {name: 'Wisconsin Beer Battered Cheese Curds', desc: 'Served with Spicy Ketchup & Chipotle Ranch Dressing', price: 8},
   ]
 };

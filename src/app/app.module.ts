@@ -10,13 +10,15 @@ import { RestaurantMenuComponent } from './restaurant-menu/restaurant-menu.compo
 import {HttpClientModule} from '@angular/common/http';
 import {InlineSVGModule} from 'ng-inline-svg';
 import { NavbarComponent } from './navbar/navbar.component';
+import { OrderPageComponent } from './order-page/order-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    RestaurantMenuComponent
+    RestaurantMenuComponent,
+    OrderPageComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {InlineSVGModule} from 'ng-inline-svg';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OrderPageComponent } from './order-page/order-page.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { OrderPageComponent } from './order-page/order-page.component';
     HomeComponent,
     NavbarComponent,
     RestaurantMenuComponent,
-    OrderPageComponent
+    OrderPageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

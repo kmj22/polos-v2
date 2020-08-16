@@ -1,0 +1,27 @@
+<div class="banner">
+  <div class="banner-content">
+    <h1>SERVING AMERICAN PUB STYLE FOOD</h1>
+
+    <button class="btn">CALL NOW</button>
+    <button class="btn">ORDER WITH DOORDASH</button>
+  </div>
+</div>
+
+<div inlineSVG="/assets/pretzel.svg" style="fill: green; width: 3em;"></div>
+
+<div class="section" gdRows="max-content!" gdColumns="1fr 1fr" gdGap="6vw" gdColumns.xs="1fr">
+  <div *ngFor="let food of FOOD_MENU.starters"
+       fxLayout="row"
+  >
+    <div class="food-img"></div>
+    <div>
+     <div fxLayout fxLayoutGap="1em" class="food-title">
+       <div>{{food.name}}</div>
+       <div fxFlex="1 0 5em" class="food-dot-separator"></div>
+       <div>{{food.price | currency:'USD':'symbol':'1.0-2'}}</div>
+     </div>
+      <div class="food-desc">{{food.desc}}</div>
+    </div>
+  </div>
+
+</div>

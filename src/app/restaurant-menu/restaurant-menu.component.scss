@@ -47,9 +47,12 @@ h1 {
 }
 
 .section {
-  min-height: 100vh;
   width: 100vw;
-  padding: 10vh 10vw;
+  padding: 0 5vw 5vw;
+
+  &.xs {
+    padding: 5vw 5vw;
+  }
 }
 
 .food-title {
@@ -72,8 +75,22 @@ h1 {
   flex-wrap: wrap;
   margin-bottom: -1em;
   justify-content: center;
-  padding: 5vh 5vw;
+  padding: 5vw;
   //padding: 10vh 10vw;
+
+  &.xs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+
+    & > *:first-child {
+      //margin-left: 5vw;
+    }
+
+    & > *:last-child {
+      margin-right: 5vw;
+    }
+  }
 
   & > * {
     margin-right: 1em;
@@ -103,7 +120,7 @@ h1 {
 
   cursor: pointer;
 
-  &:hover {
+  &:hover, .selected & {
     fill: #eaeaea;
     stroke: #eaeaea !important;
     color: #eaeaea;

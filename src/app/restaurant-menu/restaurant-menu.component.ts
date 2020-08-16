@@ -10,6 +10,7 @@ export class RestaurantMenuComponent implements OnInit {
 
   readonly FOOD_MENU = FOOD_MENU;
 
+  selectedCategory;
   menuItems = [];
 
   readonly CATEGORIES = [
@@ -26,6 +27,8 @@ export class RestaurantMenuComponent implements OnInit {
     {name: 'Sides', category: 'sides', icon: '/assets/fries.svg'},
     {name: 'Desserts', category: 'desserts', icon: '/assets/dessert.svg'},
     {name: 'Wine', category: 'wine', icon: '/assets/wine.svg'},
+    {name: 'Beer', category: 'wine', icon: '/assets/beer.svg'},
+    {name: 'Cocktails', category: 'wine', icon: '/assets/cocktail.svg'},
   ];
 
   constructor() { }
@@ -35,6 +38,7 @@ export class RestaurantMenuComponent implements OnInit {
   }
 
   selectCategory(category) {
+    this.selectedCategory = category;
     this.menuItems = this.FOOD_MENU[category.category];
   }
 

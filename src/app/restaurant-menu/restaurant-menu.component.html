@@ -7,16 +7,18 @@
   </div>
 </div>
 
-<div class="menu">
+<div class="menu hide-scroll" ngClass.xs="xs">
   <ng-container *ngFor="let category of CATEGORIES">
-    <div>
+    <div [class.selected]="selectedCategory === category">
       <div [inlineSVG]="category.icon" class="menu-option" (click)="selectCategory(category)"></div>
       <div class="menu-label">{{category.name}}</div>
     </div>
   </ng-container>
+  <div style="width:0; visibility: hidden">hi</div>
 </div>
 
-<div class="section" gdRows="max-content!" gdColumns="1fr 1fr" gdGap="6vw" gdColumns.xs="1fr">
+<div class="section" ngClass.xs="xs"
+     gdRows="max-content!" gdColumns="1fr 1fr" gdGap="6vw" gdColumns.xs="1fr">
   <div *ngFor="let food of menuItems"
        fxLayout="row"
   >

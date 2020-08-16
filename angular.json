@@ -140,5 +140,10 @@
       }
     }
   },
-  "defaultProject": "Polos"
+  "defaultProject": "Polos",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

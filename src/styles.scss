@@ -1,4 +1,5 @@
 @import "~normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 html {
   box-sizing: border-box;
@@ -47,10 +48,28 @@ html {
 }
 
 .btn {
-  border: 2px solid black;
-  outline: 0;
-  background: white;
+  border: 4px solid whitesmoke;
+  color: whitesmoke;
+  outline: none;
+  background: transparent;
   padding: 1em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+
+  transition: border-color .2s ease-in-out, background .2s ease-in-out, color .2s ease-in-out;
+
+  &.inv {
+    border-color: black;
+    color: black;
+  }
+
+  &:hover {
+    background: red;
+    border-color: red;
+    color: white;
+  }
 }
 
 

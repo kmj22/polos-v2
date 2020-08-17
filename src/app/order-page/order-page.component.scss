@@ -1,8 +1,23 @@
 .banner {
   background-image: url('https://cdn.usarestaurants.info/assets/uploads/7b2a309152a4e9d27fc52d8a942fd559_-united-states-new-jersey-morris-county-netcong-535566-polos-bar-grillhtm.jpg');
+  height: 50vh;
 }
 
 .order-methods {
   padding: 5vw 5vw;
   text-align: center;
+}
+
+.phone-order {
+  box-shadow: 3px 3px 90px 1px #eaeaea;
+  border-radius: 30px;
+  padding: 35px 20px;
+}
+
+.doordash-order {
+
+  > div {
+    border-radius: 20px;
+    box-shadow: 3px 3px 90px 1px #eaeaea;
+  }
 }

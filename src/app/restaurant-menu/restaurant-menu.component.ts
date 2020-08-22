@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {FOOD_MENU} from '../_data/menu.data';
+import {ActivatedRoute, Router} from "@angular/router";
+import {pluck} from "rxjs/internal/operators";
+import {PHONE_NUMBER} from "../_data/phone.data";
 
 @Component({
   selector: 'app-restaurant-menu',
@@ -9,37 +12,30 @@ import {FOOD_MENU} from '../_data/menu.data';
 export class RestaurantMenuComponent implements OnInit {
 
   readonly FOOD_MENU = FOOD_MENU;
+  readonly FOOD_CATEGORIES = Object.keys(this.FOOD_MENU);
+  readonly PHONE_NUMBER = PHONE_NUMBER;
 
-  selectedCategory;
-  menuItems = [];
+  @ViewChild('menuTop', {static: true}) menuTop: ElementRef;
 
-  readonly CATEGORIES = [
-    {name: 'Starters', category: 'starters', icon: '/assets/pretzel.svg'},
-    {name: 'Shareables', category: 'shareables', icon: '/assets/nachos.svg'},
-    {name: 'Flatbreads', category: 'flatbreads', icon: '/assets/flatbread.svg'},
-    {name: 'Soups', category: 'soups', icon: '/assets/soup.svg'},
-    {name: 'Wings', category: 'wings', icon: '/assets/chicken.svg'},
-    {name: 'Salads', category: 'salads', icon: '/assets/salad.svg'},
-    {name: 'Sandwiches', category: 'sandwiches', icon: '/assets/sandwich.svg'},
-    {name: 'Pizza', category: 'pizza', icon: '/assets/pizza.svg'},
-    {name: 'Burgers', category: 'burgers', icon: '/assets/burger.svg'},
-    {name: 'Entrees', category: 'entrees', icon: '/assets/meat.svg'},
-    {name: 'Sides', category: 'sides', icon: '/assets/fries.svg'},
-    {name: 'Desserts', category: 'desserts', icon: '/assets/dessert.svg'},
-    {name: 'Wine', category: 'wine', icon: '/assets/wine.svg'},
-    {name: 'Beer', category: 'wine', icon: '/assets/beer.svg'},
-    {name: 'Cocktails', category: 'wine', icon: '/assets/cocktail.svg'},
-  ];
+  selectedCategory: string;
 
-  constructor() { }
+  constructor(private router: Router,
+              private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
-    this.selectCategory(this.CATEGORIES[0]);
+    this.route.queryParams.pipe(
+      pluck('category')
+    )
+      .subscribe(category => {
+        if (this.selectedCategory) {
+          this.menuTop.nativeElement.scrollIntoView({behavior: 'smooth'});
+        }
+
+        this.selectedCategory = category || 'starters';
+      });
   }
 
-  selectCategory(category) {
-    this.selectedCategory = category;
-    this.menuItems = this.FOOD_MENU[category.category];
+  selectCategory(categoryName: string) {
+    this.router.navigate(['menu'], {queryParams: {category: categoryName}});
   }
-
 }

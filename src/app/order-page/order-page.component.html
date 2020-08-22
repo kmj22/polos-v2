@@ -1,16 +1,13 @@
 <div class="banner">
   <div class="banner-content">
     <h1>FOR PICKUP & DELIVERY</h1>
-
-    <!--<button class="btn">CALL NOW</button>-->
-    <!--<button class="btn">ORDER WITH DOORDASH</button>-->
   </div>
 </div>
 
 <div class="order-methods" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5vw" fxLayout.xs="column">
   <div fxFlex.gt-xs="0 1 300px" class="phone-order">
     <h2>To place orders call:</h2>
-    <h3>973-527-7887</h3>
+    <h3><a target="_blank" [href]="'tel:' + PHONE_NUMBER">{{PHONE_NUMBER}}</a></h3>
     <div>*All orders can be paid by credit card over the phone*</div>
   </div>
 

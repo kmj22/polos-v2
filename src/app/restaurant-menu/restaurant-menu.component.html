@@ -2,28 +2,40 @@
   <div class="banner-content">
     <h1>SERVING AMERICAN PUB STYLE FOOD</h1>
 
-    <button class="btn">CALL NOW</button>
-    <button class="btn">ORDER WITH DOORDASH</button>
+    <div fxLayout fxLayoutAlign="center center" fxLayoutGap="5vw">
+      <a class="btn-link" target="_blank" [href]="'tel:' + PHONE_NUMBER" fxFlex="0 1 289px">
+        <button class="btn">CALL NOW</button>
+      </a>
+      <a class="btn-link" fxFlex="0 1 289px"
+         href="https://www.doordash.com/business/253695/?utm_source=partner-link&utm_medium=website&utm_campaign=253695&utm_content=red-l"
+         target="_blank" alt="Order Food Delivery with DoorDash" title="Order Food Delivery with DoorDash"
+         style="text-decoration: none">
+        <div
+          style="position: relative; width:289px; height:59px; margin: 0px auto; background-image: url(https://cdn.doordash.com/media/button/button_red_l.svg); color:transparent">
+          Order Food Delivery with DoorDash
+        </div>
+      </a>
+    </div>
   </div>
 </div>
 
-<div class="menu hide-scroll" ngClass.xs="xs">
-  <ng-container *ngFor="let category of CATEGORIES">
-    <div [class.selected]="selectedCategory === category">
-      <div [inlineSVG]="category.icon" class="menu-option" (click)="selectCategory(category)"></div>
-      <div class="menu-label">{{category.name}}</div>
+<div #menuTop class="menu hide-scroll" ngClass.xs="xs">
+  <ng-container *ngFor="let categoryName of FOOD_CATEGORIES">
+    <div [class.selected]="selectedCategory === categoryName">
+      <div [inlineSVG]="FOOD_MENU[categoryName].icon" class="menu-option" (click)="selectCategory(categoryName)"></div>
+      <div class="menu-label">{{FOOD_MENU[categoryName].name}}</div>
     </div>
   </ng-container>
   <div style="width:0; visibility: hidden">hi</div>
 </div>
 
 <div class="food-items" ngClass.xs="xs"
-     gdRows="max-content!" gdColumns="1fr 1fr" gdGap="6vw" gdColumns.xs="1fr">
-  <div *ngFor="let food of menuItems"
+     gdRows="max-content!" gdColumns="1fr 1fr" gdGap="6vw" gdColumns.xs="1fr" gdAlignRows="center">
+  <div *ngFor="let food of FOOD_MENU[selectedCategory].items"
        fxLayout="row"
   >
     <div class="food-img"></div>
-    <div>
+    <div fxFlex>
       <div fxLayout fxLayoutGap="1em" class="food-title">
         <div>{{food.name}}</div>
         <div fxFlex="1 0 5em" class="food-dot-separator"></div>

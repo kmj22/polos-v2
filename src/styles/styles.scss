@@ -1,5 +1,7 @@
-@import "~normalize.css";
+@import "../../node_modules/normalize.css";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import "mixins";
+@import "variables";
 
 html {
   box-sizing: border-box;
@@ -52,7 +54,7 @@ html {
   color: whitesmoke;
   outline: none;
   background: transparent;
-  padding: 1em;
+  padding: 1em 4em;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   cursor: pointer;
@@ -70,6 +72,14 @@ html {
     border-color: red;
     color: white;
   }
+}
+
+.btn-link {
+  display: inline-block;
+}
+
+.btn-link .btn {
+  width: 100%;
 }
 
 
@@ -107,4 +117,6 @@ html {
 
 h1 {
   font-size: 64px;
+
+  @include fluid-type(font-size, $xs, $sm, 25px, 60px);
 }

@@ -1,3 +1,6 @@
+@import "mixins";
+@import "variables";
+
 .banner {
   background-image: url('https://images.squarespace-cdn.com/content/v1/573266db20c647896b5aaa45/1464961623909-PW2XB9J7SS8RJ6GZ3BV4/ke17ZwdGBToddI8pDm48kH1NQ-tiBxvsxQhVbPl7Iw97gQa3H78H3Y0txjaiv_0foACs49-HBkG_F4C3fTziO-wh7WAJ8x5TfmquXBnDIxJmCbKs1hhYDmfu9Qj4fD3KrCLSIWAQvdC7iWmC9HNtRVCvyAd1-5UQFnp8aARaJsU6YuzgbOenKvmxCQGnwKUCQmR8DmlDvqfGzO3LCXkWbw/DSC_1339.jpg');
 }
@@ -11,7 +14,9 @@
 }
 
 h2 {
-  font-size: 40px;
+  //font-size: 40px;
+
+ @include fluid-type(font-size, $xs, $sm, 20px, 40px);
 }
 
 .food-preview {
@@ -21,8 +26,16 @@ h2 {
 .section {
   min-height: 100vh;
   width: 100vw;
-  padding: 10vh 10vw;
+  padding: 10vw;
   text-align: center;
+
+  @media (max-width: $xs) {
+    min-height: initial;
+  }
+}
+
+.section-cta {
+  margin-top: 5vh;
 }
 
 .food-carousel {
@@ -42,4 +55,8 @@ h2 {
     border-radius: 5px;
     max-width: 100%
   }
+}
+
+.btn-link {
+  min-width: 289px;
 }

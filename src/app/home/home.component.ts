@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PHONE_NUMBER} from "../_data/phone.data";
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,8 @@ export class HomeComponent implements OnInit {
 
   topSlideConfig = {"slidesToShow": 1, "slidesToScroll": 1, asNavFor: '.carousel-btm', arrows: false, fade: true};
   btmSlideConfig = {"slidesToShow": 3, "slidesToScroll": 1, asNavFor: '.carousel-top', focusOnSelect: true, centerMode: true, arrows: true};
+
+  PHONE_NUMBER = PHONE_NUMBER;
 
   constructor() { }
 

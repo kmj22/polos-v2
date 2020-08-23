@@ -116,7 +116,5 @@ html {
 }
 
 h1 {
-  font-size: 64px;
-
-  @include fluid-type(font-size, $xs, $sm, 25px, 60px);
+  @include fluid-type(font-size, $xs, $sm, 28px, 60px);
 }

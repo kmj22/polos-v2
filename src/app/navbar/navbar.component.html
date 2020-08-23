@@ -1,6 +1,10 @@
-<div class="nav" fxLayout fxLayoutAlign="center" fxLayoutGap="2em">
+<div class="nav" fxLayout fxLayoutAlign="center" fxLayoutGap="2em" fxHide.xs>
   <a class="nav-item" routerLink="/">HOME</a>
   <a class="nav-item" routerLink="/menu">MENU</a>
   <a class="nav-item" routerLink="/menu" [queryParams]="{category: 'beer'}">BEER MENU</a>
   <a class="nav-item" routerLink="/order">ORDER NOW</a>
+</div>
+
+<div class="nav" fxLayoutAlign="flex-end">
+  menu
 </div>

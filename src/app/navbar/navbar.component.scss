@@ -1,5 +1,15 @@
+@import "variables";
+
 :host {
   position: relative;
+
+  @media (max-width: $xs) {
+    height: 65px;
+
+    .nav {
+      padding: 15px;
+    }
+  }
 }
 
 .nav {

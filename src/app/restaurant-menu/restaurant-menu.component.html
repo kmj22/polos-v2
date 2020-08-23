@@ -2,11 +2,13 @@
   <div class="banner-content">
     <h1>SERVING AMERICAN PUB STYLE FOOD</h1>
 
-    <div fxLayout fxLayoutAlign="center center" fxLayoutGap="5vw">
-      <a class="btn-link" target="_blank" [href]="'tel:' + PHONE_NUMBER" fxFlex="0 1 289px">
+    <div fxLayout fxLayoutAlign="center center" fxLayoutGap="5vw"
+         fxLayout.xs="column"
+    >
+      <a class="btn-link" target="_blank" [href]="'tel:' + PHONE_NUMBER" fxFlex.gt-xs="0 1 289px">
         <button class="btn">CALL NOW</button>
       </a>
-      <a class="btn-link" fxFlex="0 1 289px"
+      <a class="btn-link" fxFlex.gt-xs="0 1 289px"
          href="https://www.doordash.com/business/253695/?utm_source=partner-link&utm_medium=website&utm_campaign=253695&utm_content=red-l"
          target="_blank" alt="Order Food Delivery with DoorDash" title="Order Food Delivery with DoorDash"
          style="text-decoration: none">

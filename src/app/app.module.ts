@@ -12,6 +12,8 @@ import {InlineSVGModule} from 'ng-inline-svg';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OrderPageComponent } from './order-page/order-page.component';
 import { FooterComponent } from './footer/footer.component';
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 @NgModule({
   declarations: [
@@ -24,11 +26,17 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FlexLayoutModule,
     SlickCarouselModule,
     HttpClientModule,
-    InlineSVGModule.forRoot()
+    InlineSVGModule.forRoot(),
+    NoopAnimationsModule,
+    MatSidenavModule,
+  ],
+  exports: [
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

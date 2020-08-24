@@ -5,6 +5,6 @@
   <a class="nav-item" routerLink="/order">ORDER NOW</a>
 </div>
 
-<div class="nav" fxLayoutAlign="flex-end">
-  menu
+<div class="nav" fxLayoutAlign="flex-end" (click)="toggleSideNav.emit()" fxHide.gt-xs>
+  <div [inlineSVG]="'/assets/menu.svg'"></div>
 </div>

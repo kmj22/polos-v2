@@ -1,0 +1,39 @@
+mat-sidenav {
+  width: 100vw;
+  height: 100vh;
+  background: #191919;
+  transition: 0.2s all;
+  color: white;
+
+  a {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.mat-drawer {
+  transform: translate3d(100%, 0, 0);
+}
+
+.nav {
+  padding-left: 20%;
+  padding-top: 50px;
+
+  .active {
+    color: red;
+  }
+}
+
+.nav-close {
+  height: 65px;
+  padding: 15px;
+
+  ::ng-deep svg {
+    display: block;
+    width: 1.5em;
+    height: auto;
+    color: white;
+    fill: white;
+  }
+}

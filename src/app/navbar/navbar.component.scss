@@ -39,3 +39,9 @@
     color: green;
   }
 }
+
+:host ::ng-deep svg {
+  display: block;
+  width: 1.5em;
+  height: auto;
+}

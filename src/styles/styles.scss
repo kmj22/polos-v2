@@ -33,7 +33,7 @@ ngx-slick-carousel {
   }
 
   .slick-arrow::before {
-    color: red;
+    color: $c-accent;
     font-size: inherit;
   }
 
@@ -69,8 +69,8 @@ html {
   }
 
   &:hover {
-    background: red;
-    border-color: red;
+    background: $c-accent;
+    border-color: $c-accent;
     color: white;
   }
 }

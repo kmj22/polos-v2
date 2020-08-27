@@ -1,3 +1,6 @@
+@import "variables";
+@import "mixins";
+
 .banner {
   background-image: url('https://images.squarespace-cdn.com/content/v1/573266db20c647896b5aaa45/1462925897569-X90E4W3TKHB1PLFZMI4O/ke17ZwdGBToddI8pDm48kPmLlvCIXgndBxNq9fzeZb1Zw-zPPgdn4jUwVcJE1ZvWRBizNpWTGFgrpiRV_00eX3VwxMIOEK7mu3DMnwqv-Nsp2ryTI0HqTOaaUohrI8PIJHwQ_mvadvvhLgfYN7DtPDwNniYJh6KkixVZqmTTrGQKMshLAGzx4R3EDFOm1kBS/Filet+Mignon+Bordelaise.jpg');
 }
@@ -27,7 +30,7 @@
 }
 
 .food-dot-separator {
-  border-top: 2px dotted red;
+  border-top: 2px dotted $c-accent;
   margin-top: 1em;
 }
 
@@ -37,6 +40,8 @@
   margin-bottom: -1em;
   justify-content: center;
   padding: 5vw;
+
+  position: relative;
 
   &.xs {
     flex-wrap: nowrap;
@@ -54,6 +59,7 @@
   text-align: center;
   font-size: 12px;
   margin-top: .5em;
+  font-family: Montserrat, sans-serif;
 }
 
 .menu-option {
@@ -64,8 +70,8 @@
   justify-content: center;
   align-items: center;
 
-  fill: #a9a9a9;
-  color: #a9a9a9;
+  fill: $c-dark-gray;
+  color: $c-dark-gray;
   background: #eaeaea;
 
   cursor: pointer;
@@ -73,7 +79,7 @@
   &:hover, .selected & {
     fill: #eaeaea;
     color: #eaeaea;
-    background: #a9a9a9;
+    background: $c-dark-gray;
   }
 
   ::ng-deep svg {
@@ -83,7 +89,11 @@
   }
 }
 
+.menu-scroll-anchor {
+  position: absolute;
+  top: -55px; // offsets the navbar's height, as it uses position: fixed
+}
+
 .btn-link {
   min-width: 289px;
 }
-

@@ -21,7 +21,9 @@
   </div>
 </div>
 
-<div #menuTop class="menu hide-scroll" ngClass.xs="xs">
+<div class="menu hide-scroll" ngClass.xs="xs" style="position: relative;">
+  <div #menuTop class="menu-scroll-anchor"></div>
+
   <ng-container *ngFor="let categoryName of FOOD_CATEGORIES">
     <div [class.selected]="selectedCategory === categoryName">
       <div [inlineSVG]="FOOD_MENU[categoryName].icon" class="menu-option" (click)="selectCategory(categoryName)"></div>

@@ -2,24 +2,27 @@
   <mat-sidenav #sidenav [fixedInViewport]="true">
 
     <div class="nav-close" fxLayoutAlign="flex-end" (click)="sidenav.close()">
-      <div inlineSVG="/assets/close.svg"></div>
+      <div class="icon" inlineSVG="/assets/close.svg"></div>
     </div>
 
     <div class="nav" fxLayout="column" fxLayoutGap="30px" (click)="sidenav.close()">
-      <a class="nav-item" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">HOME</a>
-      <a class="nav-item" routerLink="/menu" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">MENU</a>
-      <a class="nav-item" routerLink="/menu" [queryParams]="{category: 'beer'}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">BEER MENU</a>
-      <a class="nav-item" routerLink="/order" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">ORDER NOW</a>
+      <a class="nav-item" *ngFor="let navItem of NAV_ITEMS"
+         [routerLink]="navItem.url" routerLinkActive="active"
+         [queryParams]="navItem.queryParams"
+         [routerLinkActiveOptions]="{exact: true}">{{navItem.label}}</a>
     </div>
   </mat-sidenav>
 
-  <mat-sidenav-content>
+  <mat-sidenav-content style="position: relative;">
+
+    <div id="scroll-to-top-detector"></div>
+
     <app-navbar (toggleSideNav)="sidenav.toggle()"></app-navbar>
     <router-outlet></router-outlet>
     <app-footer></app-footer>
 
-    <div (click)="scrollToTop()" style="position: fixed; bottom: 2vw; right: 2vw;" *ngIf="showScrollToTop">
-      scroll to top
+    <div (click)="scrollToTop()" class="scroll-to-top" *ngIf="showScrollToTop">
+      <div class="icon" inlineSVG="/assets/up-arrow.svg"></div>
     </div>
   </mat-sidenav-content>
 

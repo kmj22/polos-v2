@@ -11,6 +11,10 @@
 
 .banner-drink {
   background-image: url('https://images.squarespace-cdn.com/content/v1/573266db20c647896b5aaa45/1463019129015-OVSF5UF3CFM21V1G07LO/ke17ZwdGBToddI8pDm48kKXVfAt9LsIMjK8AwFWz8mV7gQa3H78H3Y0txjaiv_0fCm2jZnKwyJSlb-AlLxnEdU7fvvF4_I1AsKJxSaFAczfcA-mh-3K1v9LoY8yZ6kkk8eSOYnNd9sCB8xjAo8q6Bs2R59z2HWVKMNU9GXmUK4U7cST6lSwfwfKH4qym58rYOtw8rsqtRQS5YlIcSU8ZYw/FullSizeRender.jpg');
+
+  @media (max-width: $xs) {
+    height: 50vh;
+  }
 }
 
 h2 {
@@ -26,7 +30,7 @@ h2 {
 .section {
   min-height: 100vh;
   width: 100vw;
-  padding: 10vw;
+  padding: min(10vw, 100px);
   text-align: center;
 
   @media (max-width: $xs) {
@@ -35,13 +39,13 @@ h2 {
 }
 
 .section-cta {
-  margin-top: 5vw;
+  margin-top: 50px;
 }
 
 .food-carousel {
   width: 100%;
   max-width: 800px;
-  display: inline-block;;
+  display: inline-block;
 }
 
 .takeout-and-delivery p {
@@ -59,4 +63,27 @@ h2 {
 
 .btn-link {
   min-width: 289px;
+}
+
+.title {
+  * {
+    margin: 0;
+  }
+
+  .welcome {
+    font-size: 35px;
+    margin-bottom: 25px;
+  }
+
+  .polos {
+    @include fluid-type(font-size, $xs, $sm, 45px, 80px);
+    font-family: Pacifico, cursive;
+  }
+}
+
+
+.shadow {
+  box-shadow: 3px 3px 90px 1px rgba(#eaeaea, .35);
+  border-radius: 30px;
+  padding: 10px;
 }

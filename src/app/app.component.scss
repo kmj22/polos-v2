@@ -1,7 +1,9 @@
+@import "variables";
+
 mat-sidenav {
   width: 100vw;
   height: 100vh;
-  background: #191919;
+  background: $c-dark-gray;
   transition: 0.2s all;
   color: white;
 
@@ -36,4 +38,13 @@ mat-sidenav {
     color: white;
     fill: white;
   }
+}
+
+.mat-drawer-container {
+  color: unset;
+  background: unset;
+}
+
+.mat-drawer-content {
+  overflow: hidden;
 }

@@ -1,6 +1,8 @@
+@import "variables";
+
 .footer {
   padding: 5vh 5vw;
-  background: #191919;
+  background: $c-dark-gray;
   color: whitesmoke;
   font-family: 'Montserrat', sans-serif;
 

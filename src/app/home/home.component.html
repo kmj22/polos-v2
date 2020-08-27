@@ -1,30 +1,32 @@
 <div class="banner">
   <div class="banner-content">
-    <h1>WELCOME TO</h1>
-
-    <img class="logo" src="https://media-cdn.tripadvisor.com/media/photo-s/0c/1f/60/5c/polo-s-bar-grill.jpg">
-
-    <h3>Owned & operated by the Polo family</h3>
+    <div class="title">
+      <h1 class="welcome">WELCOME TO</h1>
+      <h1 class="polos">Polo's Bar & Grill</h1>
+    </div>
 
     <div fxLayout fxLayoutAlign="center center" fxLayoutGap="5vw"
-         fxLayout.xs="column" fxLayoutAlign.xs="flex-start center"
+         fxLayout.lt-md="column" fxLayoutAlign.lt-md="flex-start center" class="section-cta"
     >
-      <a class="btn-link" routerLink="/menu"  fxFlex.gt-xs="0 1 289px">
+      <a class="btn-link" routerLink="/menu" fxFlex.gt-sm="0 1 289px">
         <button class="btn">SEE OUR MENU</button>
       </a>
-      <a class="btn-link" target="_blank" [href]="'tel:' + PHONE_NUMBER" fxFlex.gt-xs="0 1 289px">
+      <a class="btn-link" target="_blank" [href]="'tel:' + PHONE_NUMBER" fxFlex.gt-sm="0 1 289px">
         <button class="btn">CALL NOW</button>
       </a>
-      <a class="btn-link" fxFlex.gt-xs="0 1 289px"
-        href="https://www.doordash.com/business/253695/?utm_source=partner-link&utm_medium=website&utm_campaign=253695&utm_content=red-l"
-        target="_blank" alt="Order Food Delivery with DoorDash" title="Order Food Delivery with DoorDash"
-        style="text-decoration: none">
+      <a class="btn-link" fxFlex.gt-sm="0 1 289px"
+         href="https://www.doordash.com/business/253695/?utm_source=partner-link&utm_medium=website&utm_campaign=253695&utm_content=red-l"
+         target="_blank" alt="Order Food Delivery with DoorDash" title="Order Food Delivery with DoorDash"
+         style="text-decoration: none">
         <div
           style="position: relative; width:289px; height:59px; margin: 0px auto; background-image: url(https://cdn.doordash.com/media/button/button_red_l.svg); color:transparent">
           Order Food Delivery with DoorDash
         </div>
       </a>
     </div>
+
+    <h3>Owned & operated by the Polo family</h3>
+
   </div>
 </div>
 
@@ -49,7 +51,9 @@
   </div>
 
   <div class="section-cta">
-    <a class="btn-link" routerLink="/menu"><button class="btn inv">VIEW FULL MENU</button></a>
+    <a class="btn-link" routerLink="/menu">
+      <button class="btn inv">VIEW FULL MENU</button>
+    </a>
   </div>
 </div>
 
@@ -59,7 +63,7 @@
   <div fxLayout fxLayoutAlign="center center" fxLayoutGap="30px"
        fxLayout.xs="column-reverse"
   >
-    <div fxFlex>
+    <div fxFlex class="shadow">
       <h2>TAKEOUT & DELIVERY</h2>
       <p>Curb-Side Pick-Up, call in your order when you arrive in the parking lot we will bring the order out to
         you.</p>
@@ -75,7 +79,7 @@
   <div fxLayout="row-reverse" fxLayoutAlign="center center" fxLayoutGap="30px"
        fxLayout.xs="column-reverse"
   >
-    <div fxFlex>
+    <div fxFlex class="shadow">
       <h2>CATERING & COCKTAILS</h2>
 
       <p>Catered family style trays available for Pick-Up & Delivery. Please call for catering menu.</p>
@@ -84,12 +88,15 @@
       <p>Growlers (64oz & 32oz) of our Draft Beer & Sangria available.</p>
     </div>
     <div fxFlex>
-      <img src="https://images.pexels.com/photos/989699/pexels-photo-989699.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+      <img
+        src="https://images.pexels.com/photos/989699/pexels-photo-989699.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
     </div>
   </div>
 
   <div>
-    <a class="btn-link" routerLink="/order"><button class="btn inv">ORDER NOW</button></a>
+    <a class="btn-link" routerLink="/order">
+      <button class="btn inv">ORDER NOW</button>
+    </a>
   </div>
 </div>
 
@@ -99,6 +106,8 @@
 
     <h3>Try one of our signature cocktails, draft beer, or premium wines.</h3>
 
-    <a class="btn-link" routerLink="/menu" [queryParams]="{category: 'beer'}"><button class="btn">SEE DRINK MENU</button></a>
+    <a class="btn-link" routerLink="/menu" [queryParams]="{category: 'beer'}">
+      <button class="btn">SEE DRINK MENU</button>
+    </a>
   </div>
 </div>

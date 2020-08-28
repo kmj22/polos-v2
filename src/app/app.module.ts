@@ -14,6 +14,7 @@ import { OrderPageComponent } from './order-page/order-page.component';
 import { FooterComponent } from './footer/footer.component';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSidenavModule} from "@angular/material/sidenav";
+import { FoodMenuGridComponent } from './food-menu-grid/food-menu-grid.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     NavbarComponent,
     RestaurantMenuComponent,
     OrderPageComponent,
-    FooterComponent
+    FooterComponent,
+    FoodMenuGridComponent
   ],
   imports: [
     BrowserModule,

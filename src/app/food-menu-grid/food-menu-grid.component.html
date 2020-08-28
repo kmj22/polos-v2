@@ -1,0 +1,9 @@
+<div class="food-items" ngClass.xs="xs"
+     gdRows="max-content!" gdColumns="1fr 1fr" gdGap="6vw" gdColumns.xs="1fr" gdAlignRows="center">
+
+  <div *ngFor="let food of items"
+       fxLayout="row"
+  >
+    <ng-container *ngTemplateOutlet="foodTemplate;context:{food: food}"></ng-container>
+  </div>
+</div>

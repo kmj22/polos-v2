@@ -1,0 +1,9 @@
+.food-items {
+  padding: 0 5vw 5vw;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  &.xs {
+    padding: 5vw 5vw;
+  }
+}

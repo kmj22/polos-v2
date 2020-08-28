@@ -33,20 +33,76 @@
   <div style="width:0; visibility: hidden">hi</div>
 </div>
 
-<div class="food-items" ngClass.xs="xs"
-     gdRows="max-content!" gdColumns="1fr 1fr" gdGap="6vw" gdColumns.xs="1fr" gdAlignRows="center">
-  <div *ngFor="let food of FOOD_MENU[selectedCategory].items"
-       fxLayout="row"
-  >
-    <div class="food-img"></div>
-    <div fxFlex>
-      <div fxLayout fxLayoutGap="1em" class="food-title">
-        <div>{{food.name}}</div>
-        <div fxFlex="1 0 5em" class="food-dot-separator"></div>
-        <div>{{food.price | currency:'USD':'symbol':'1.0-2'}}</div>
-      </div>
-      <div class="food-desc">{{food.desc}}</div>
+<div class="wing-prices" *ngIf="selectedCategory === 'wings'">Traditional $8 bone-in, $10 bone-out</div>
+
+
+<ng-container [ngSwitch]="selectedCategory">
+  <ng-container *ngSwitchCase="'wine'">
+    <ng-container *ngFor="let wineCategory of FOOD_MENU[selectedCategory].categories">
+      <h2 class="wine-header">{{wineCategory.title | uppercase}}</h2>
+      <ng-container *ngTemplateOutlet="menuGrid; context:{items: wineCategory.items, foodTemplate: foodStandard}"></ng-container>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'beer'">
+
+    <div fxLayout fxLayoutAlign="center" class="beer-filters">
+      <button fxFlex="0 1 auto" class="btn inv beer-filter" (click)="selectedBeerCategory = 0" [class.btn-active]="selectedBeerCategory === 0">Draft Beer</button>
+      <button fxFlex="0 1 auto" class="btn inv beer-filter" (click)="selectedBeerCategory = 1" [class.btn-active]="selectedBeerCategory === 1">Bottled Beer</button>
+    </div>
+
+    <ng-container *ngIf="FOOD_MENU[selectedCategory].categories[selectedBeerCategory]; let beerCategory">
+      <h2 class="wine-header">{{beerCategory.title | uppercase}}</h2>
+      <ng-container *ngTemplateOutlet="menuGrid; context:{items: beerCategory.items, foodTemplate: foodBeer}"></ng-container>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngSwitchDefault>
+    <ng-container
+      *ngTemplateOutlet="menuGrid; context:{items: FOOD_MENU[selectedCategory].items, foodTemplate: foodStandard}"></ng-container>
+  </ng-container>
+</ng-container>
+
+
+<ng-template #menuGrid let-items="items" let-foodTemplate="foodTemplate">
+  <div class="food-items" ngClass.xs="xs"
+       gdRows="max-content!" gdColumns="1fr 1fr" gdGap="6vw" gdColumns.xs="1fr" gdAlignRows="center">
+
+    <div *ngFor="let food of items"
+         fxLayout="row"
+    >
+      <ng-container *ngTemplateOutlet="foodTemplate;context:{food: food}"></ng-container>
     </div>
   </div>
+</ng-template>
 
-</div>
+<ng-template #foodStandard let-food="food">
+  <div class="food-img"></div>
+  <div fxFlex>
+    <div fxLayout fxLayoutGap="1em" class="food-title">
+      <div>{{food.name}}</div>
+      <div fxFlex="1 0 3.5em" class="food-dot-separator" *ngIf="food.price"></div>
+      <div fxFlex="0 0 auto" *ngIf="selectedCategory !== 'wine'">{{food.price | currency:'USD':'symbol':'1.0-2'}}</div>
+      <div fxFlex="0 0 auto" *ngIf="selectedCategory === 'wine'">{{food.price}}</div>
+    </div>
+    <div class="food-desc">{{food.desc}}</div>
+  </div>
+</ng-template>
+
+<ng-template #foodBeer let-food="food">
+  <div class="food-img">
+    <a [href]="food.url" target="_blank"><img [src]="food.img"></a>
+  </div>
+  <div fxFlex>
+    <div fxLayout fxLayoutGap="1em" class="food-title">
+      <div>{{food.name}} - <i>{{food.beer_style}}</i></div>
+    </div>
+    <div class="food-desc" fxLayout="row wrap" fxLayoutGap="1em">
+      <span>{{food.abv}}</span>
+      <span *ngIf="food.ibu">{{food.ibu}}</span>
+      <span>{{food.brewery}}</span>
+      <span>{{food.location}}</span>
+    </div>
+    <!--<div class="food-desc">{{food.desc}}</div>-->
+  </div>
+</ng-template>

@@ -3,7 +3,7 @@
 .footer {
   padding: 5vh 5vw;
   background: $c-dark-gray;
-  color: whitesmoke;
+  color: $c-white;
   font-family: 'Montserrat', sans-serif;
 
   h4 {
@@ -22,5 +22,19 @@
 
   .disclaimer {
     margin-top: 1em;
+  }
+
+  .address, .contact, .disclaimer {
+    text-align: center;
+    line-height: 1.35;
+  }
+
+  a {
+    color: $c-white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

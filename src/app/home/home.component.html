@@ -37,15 +37,15 @@
                         #slickModal="slick-carousel"
                         [config]="topSlideConfig">
       <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-        <img [src]="slide.img" alt="" width="100%">
+        <img [attr.data-lazy]="slide.img" alt="" width="100%">
       </div>
     </ngx-slick-carousel>
 
     <ngx-slick-carousel class="carousel carousel-btm"
                         #slickModal="slick-carousel"
                         [config]="btmSlideConfig">
-      <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-        <img [src]="slide.img" alt="" width="100%">
+      <div ngxSlickItem *ngFor="let slide of slideThumbs" class="slide">
+        <img [attr.data-lazy]="slide.img" alt="" width="100%">
       </div>
     </ngx-slick-carousel>
   </div>

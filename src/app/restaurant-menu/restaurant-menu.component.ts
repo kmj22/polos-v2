@@ -18,6 +18,7 @@ export class RestaurantMenuComponent implements OnInit {
   @ViewChild('menuTop', {static: true}) menuTop: ElementRef;
 
   selectedCategory: string;
+  selectedBeerCategory = 0;
 
   constructor(private router: Router,
               private route: ActivatedRoute,) { }
@@ -28,8 +29,8 @@ export class RestaurantMenuComponent implements OnInit {
     )
       .subscribe(category => {
         if (this.selectedCategory) {
-          this.menuTop.nativeElement.scrollIntoView({behavior: 'smooth'});
-          const body = document.getElementsByName('body')['scrollTop'] -= 100;
+          // this.menuTop.nativeElement.scrollIntoView({behavior: 'smooth'});
+          // const body = document.getElementsByName('body')['scrollTop'] -= 100;
         }
 
         this.selectedCategory = category || 'starters';

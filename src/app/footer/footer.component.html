@@ -1,16 +1,16 @@
 <div fxLayout fxLayoutAlign="space-evenly" class="footer"
   fxLayout.xs="column" fxLayoutGap.xs="5vw"
 >
-  <div fxFlex style="text-align: center;">
+  <div fxFlex class="address">
     <h4>ADDRESS:</h4>
     <div>50 State Route 183</div>
     <div>Netcong, NJ 07857</div>
   </div>
 
-  <div fxFlex style="text-align: center">
+  <div fxFlex class="contact">
     <h4>CONTACT</h4>
-    <div>973-527-7887</div>
-    <div>polosbarandgrill@gmail.com</div>
+    <div><a [href]="'tel:' + PHONE_NUMBER" target="_blank">{{PHONE_NUMBER}}</a></div>
+    <div><a href="mailto:{{EMAIL}}" target="_blank">{{EMAIL}}</a></div>
   </div>
 
   <div fxFlex>
@@ -31,6 +31,6 @@
       <div class="day">Saturday:</div>
       <div class="time">11 AM - Late</div>
     </div>
-    <div class="disclaimer" style="text-align: center;">*Closing times vary, please call in advance</div>
+    <div class="disclaimer">*Closing times vary, please call in advance</div>
   </div>
 </div>
